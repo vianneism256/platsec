@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Security - Platform Security Learning</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="navbar">
+            <a href="../home.html" class="logo">🛡️ PlatSec</a>
+            <ul class="nav-links">
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="../lessons.html">Lessons</a></li>
+                <li><a href="../favorites.html">Favorites</a></li>
+                <li><a href="../about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="lesson-header">
+        <div class="container">
+            <h1 class="lesson-title">⚡ API Security</h1>
+            <div class="lesson-meta">
+                <button class="favorite-btn" data-lesson="lesson5">
+                    <span class="heart-icon">♡</span>
+                    Add to Favorites
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="lesson-content">
+                <h2>API Security Fundamentals</h2>
+                <p>APIs are the backbone of modern applications, making their security crucial. Secure APIs protect against unauthorized access and data breaches while ensuring reliable service delivery.</p>
+
+                <h2>API Authentication Methods</h2>
+                <ul>
+                    <li><strong>API Keys:</strong> Simple but limited security method</li>
+                    <li><strong>OAuth 2.0:</strong> Industry-standard authorization framework</li>
+                    <li><strong>JWT Tokens:</strong> Stateless authentication tokens</li>
+                    <li><strong>Basic Authentication:</strong> Username/password over HTTPS</li>
+                    <li><strong>Mutual TLS:</strong> Certificate-based authentication</li>
+                </ul>
+
+                <h2>Common API Vulnerabilities</h2>
+                <ul>
+                    <li>Broken authentication and authorization</li>
+                    <li>Excessive data exposure</li>
+                    <li>Lack of rate limiting</li>
+                    <li>Injection attacks</li>
+                    <li>Improper asset management</li>
+                    <li>Insufficient logging and monitoring</li>
+                </ul>
+
+                <h2>API Security Best Practices</h2>
+                <ul>
+                    <li><strong>Authentication:</strong> Implement strong authentication mechanisms</li>
+                    <li><strong>Authorization:</strong> Enforce proper access controls</li>
+                    <li><strong>Rate Limiting:</strong> Prevent abuse and DoS attacks</li>
+                    <li><strong>Input Validation:</strong> Sanitize all API inputs</li>
+                    <li><strong>HTTPS Only:</strong> Encrypt all API communications</li>
+                </ul>
+
+                <h2>API Gateway Security</h2>
+                <p>API gateways provide centralized security controls including authentication, authorization, rate limiting, and monitoring for all API traffic.</p>
+
+                <h2>Security Testing</h2>
+                <ul>
+                    <li>Regular penetration testing</li>
+                    <li>Automated security scanning</li>
+                    <li>OWASP API Top 10 compliance</li>
+                    <li>Runtime application self-protection (RASP)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
