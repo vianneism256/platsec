@@ -20,7 +20,7 @@
 
     <div class="lesson-header">
         <div class="container">
-            <h1 class="lesson-title">🔒 Data Encryption</h1>
+            <h1 class="lesson-title">Platform Architecture</h1>
             </div>
         </div>
     </div>
@@ -28,44 +28,153 @@
     <main class="main-content">
         <div class="container">
             <div class="lesson-content">
-                <h2>Introduction to Encryption</h2>
-                <p>Encryption transforms readable data (plaintext) into an unreadable format (ciphertext) using mathematical algorithms and keys. It's essential for protecting sensitive information.</p>
-
-                <h2>Types of Encryption</h2>
+                <h2>Layers of a Computing Platform</h2>
                 <ul>
-                    <li><strong>Symmetric Encryption:</strong> Same key for encryption and decryption (AES, DES)</li>
-                    <li><strong>Asymmetric Encryption:</strong> Public/private key pairs (RSA, ECC)</li>
-                    <li><strong>Hash Functions:</strong> One-way encryption for data integrity (SHA-256, MD5)</li>
+                <li><strong>Hardware:</strong> Physical components such as CPU, memory, storage, and peripherals</li>
+                <li><strong>Firmware:</strong> BIOS/UEFI, device firmware, and initialization processes</li>
+                <li><strong>Operating System (OS):</strong> Manages hardware, runs applications, enforces security</li>
+                <li><strong>Applications:</strong> Software that provides user-level services</li>
                 </ul>
 
-                <h2>Encryption at Rest vs. In Transit</h2>
-                <p><strong>Encryption at Rest:</strong> Protects stored data on disk, databases, or backups.</p>
-                <p><strong>Encryption in Transit:</strong> Protects data moving between systems (TLS/SSL, VPNs).</p>
+                <h2>Mobile vs. Desktop Platforms</h2>
+                <p><strong>Mobile platforms</strong> are optimized for portability and battery life. They integrate hardware and software tightly and use app sandboxing with stricter permissions (Android/iOS).</p>
+                <p><strong>Desktop platforms</strong> focus on higher performance and flexibility. They have a broader software ecosystem and more customization options, but also a larger attack surface.</p>
 
-                <h2>Key Management</h2>
+                <h2>Cloud and Virtualization as Platforms</h2>
+                <p><strong>Cloud platforms</strong> abstract physical resources and provide services on demand (AWS, Azure). Security is based on the shared responsibility model.</p>
+                <p><strong>Virtualization platforms</strong> use hypervisors to enable multiple virtual machines on one physical machine. This increases resource efficiency but also introduces risks like VM escape and misconfigurations.</p>
+
+                <h2>Sample Platform Attack Surface</h2>
                 <ul>
-                    <li>Secure key generation and storage</li>
-                    <li>Regular key rotation policies</li>
-                    <li>Hardware Security Modules (HSMs)</li>
-                    <li>Key escrow and recovery procedures</li>
+                <li><strong>Hardware:</strong> Side-channel attacks, physical tampering</li>
+                <li><strong>Firmware:</strong> BIOS/UEFI rootkits, firmware backdoors</li>
+                <li><strong>Operating System:</strong> Privilege escalation, kernel exploits</li>
+                <li><strong>Applications:</strong> Malware, unpatched vulnerabilities</li>
                 </ul>
 
-                <h2>Modern Encryption Standards</h2>
+                <h2>Trusted Platform Module (TPM)</h2>
+                <p>TPM is a hardware-based security chip that provides a root of trust for a computing platform. It works independently of the main CPU and OS, ensuring secure storage, encryption, and attestation.</p>
+
+                <h2>Why TPM Matters</h2>
                 <ul>
-                    <li><strong>AES (Advanced Encryption Standard):</strong> Symmetric encryption standard</li>
-                    <li><strong>RSA:</strong> Widely used public-key cryptosystem</li>
-                    <li><strong>ECC (Elliptic Curve Cryptography):</strong> Efficient public-key encryption</li>
-                    <li><strong>TLS/SSL:</strong> Protocols for secure communication</li>
+                <li>Stores important digital keys, certificates, and passwords securely</li>
+                <li>Helps computers start safely through Secure Boot</li>
+                <li>Blocks hidden attacks during startup, including firmware or boot-level attacks</li>
                 </ul>
 
-                <h2>Best Practices</h2>
+                <h2>UEFI (Unified Extensible Firmware Interface)</h2>
+                <p>UEFI is the modern replacement for BIOS. It initializes hardware when a computer powers on, then hands control to the operating system. It acts as a bridge between hardware and the OS.</p>
+
+                <h2>Chain of Trust</h2>
+                <p>Each stage of the boot process checks the integrity of the next stage:</p>
                 <ul>
-                    <li>Use strong, industry-standard algorithms</li>
-                    <li>Implement proper key management</li>
-                    <li>Encrypt sensitive data at rest and in transit</li>
-                    <li>Regular security audits and updates</li>
-                    <li>Consider quantum-resistant algorithms for future-proofing</li>
+                <li>Root of Trust (TPM/firmware key)</li>
+                <li>Firmware checks bootloader</li>
+                <li>Bootloader checks OS kernel</li>
+                <li>OS verifies drivers and applications</li>
                 </ul>
+                <p>If any stage fails, the boot process stops or raises alerts.</p>
+
+                <h2>TPM Versions</h2>
+                <ul>
+                <li><strong>TPM 1.2:</strong> Basic cryptographic support (SHA-1, RSA)</li>
+                <li><strong>TPM 2.0:</strong> Stronger algorithms (SHA-256, ECC), required for Windows 11 and modern enterprise security solutions</li>
+                </ul>
+
+                <h2>TPM Security Benefits</h2>
+                <ul>
+                <li>Protects against rootkits, bootkits, key theft, and unauthorized firmware changes</li>
+                <li>Provides hardware-enforced trust instead of relying only on software</li>
+                </ul>
+
+                <h2>TPM Limitations</h2>
+                <ul>
+                <li>Requires hardware support</li>
+                <li>TPM failure may result in loss of access to encrypted data</li>
+                <li>Cannot prevent OS-level malware once the system is running</li>
+                <li>Still vulnerable to advanced physical attacks on the chip</li>
+                </ul>
+
+                <h2>Virtualization</h2>
+                <p>Virtualization allows multiple virtual machines (VMs) to run on one physical server.</p>
+                <p><strong>Key features:</strong></p>
+                <ul>
+                <li>Consolidated hardware: One server hosts many virtual environments</li>
+                <li>Isolated environments: Each VM runs independently with its own OS and apps</li>
+                <li>Maximized utilization: Efficient use of hardware resources</li>
+                </ul>
+
+                <h2>Types of Virtualization</h2>
+                <ul>
+                <li><strong>Server virtualization:</strong> Multiple virtual servers on one physical machine</li>
+                <li><strong>Desktop virtualization:</strong> Virtual desktop infrastructure (VDI), remote desktop access</li>
+                <li><strong>Network virtualization:</strong> Virtual networks independent of physical hardware</li>
+                <li><strong>Storage virtualization:</strong> Pooled storage from multiple devices</li>
+                <li><strong>Application virtualization:</strong> Applications run in isolated environments</li>
+                </ul>
+
+                <h2>Types of Hypervisor</h2>
+                <ul>
+                <li><strong>Type 1 (Bare-Metal):</strong> Runs directly on hardware, high performance and security (VMware ESXi, Microsoft Hyper-V)</li>
+                <li><strong>Type 2 (Hosted):</strong> Runs on top of a host operating system (VirtualBox, VMware Workstation)</li>
+                </ul>
+
+                <h2>Benefits of Virtualization</h2>
+                <ul>
+                <li>Cost reduction</li>
+                <li>Increased agility</li>
+                <li>Enhanced disaster recovery</li>
+                <li>Improved management</li>
+                <li>Easier testing and compatibility</li>
+                </ul>
+
+                <h2>Popular Virtualization Platforms</h2>
+                <ul>
+                <li><strong>Enterprise:</strong> VMware vSphere, Microsoft Hyper-V, Citrix XenServer, Red Hat Virtualization</li>
+                <li><strong>Desktop/Development:</strong> VMware Workstation/Fusion, Oracle VirtualBox, Parallels Desktop, QEMU/KVM</li>
+                </ul>
+
+                <h2>Security Risks of Virtualization</h2>
+                <ul>
+                <li><strong>Hyperjacking:</strong> Attackers compromise the hypervisor itself</li>
+                <li><strong>VM Escape:</strong> Malicious code inside a VM breaks isolation and accesses the host</li>
+                <li><strong>Misconfiguration vulnerabilities:</strong> Weak credentials, overprivileged users, poor network segmentation, overcommitted resources</li>
+                </ul>
+
+                <h2>VM Isolation Techniques</h2>
+                <ul>
+                <li>Strong separation between VMs</li>
+                <li>Controlled resource allocation (CPU, RAM, storage quotas)</li>
+                <li>Access control to prevent unauthorized VM-to-VM communication</li>
+                <li>Snapshot monitoring to detect rollback attacks</li>
+                </ul>
+
+                <h2>Secure VM Networking</h2>
+                <ul>
+                <li>Virtual switches to control traffic</li>
+                <li>Network segmentation using VLANs</li>
+                <li>Firewall rules per VM or segment</li>
+                <li>IDS/IPS integration to detect malicious traffic</li>
+                </ul>
+
+                <h2>VM Snapshots and Rollback Security</h2>
+                <p>Snapshots save system state for recovery or testing.</p>
+                <p><strong>Risks include:</strong></p>
+                <ul>
+                <li>Rollback to vulnerable versions</li>
+                <li>Exposing sensitive data</li>
+                </ul>
+                <p><strong>Best practices:</strong> Encrypt snapshots, monitor creation, and patch after rollback.</p>
+
+                <h2>Best Practices for Virtualization Security</h2>
+                <ul>
+                <li>Keep hypervisors updated and patched</li>
+                <li>Enforce strict access controls</li>
+                <li>Follow CIS and NIST security baselines</li>
+                <li>Monitor VM behavior with logs and alerts</li>
+                <li>Encrypt VM images and storage</li>
+                </ul>
+
             </div>
         </div>
     </main>
