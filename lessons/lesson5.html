@@ -9,7 +9,7 @@
 <body>
     <nav class="nav-container">
         <div class="navbar">
-            <a href="../home.html" class="logo">🛡️ PlatSec</a>
+            <a href="../home.html" class="logo">PlatSec University</a>
             <ul class="nav-links">
                 <li><a href="../home.html">Home</a></li>
                 <li><a href="../lessons.html">Lessons</a></li>
@@ -20,58 +20,48 @@
 
     <div class="lesson-header">
         <div class="container">
-            <h1 class="lesson-title">⚡ API Security</h1>
+            <h1 class="lesson-title">Hyper-V and Shared Folders</h1>
         </div>
     </div>
 
     <main class="main-content">
         <div class="container">
             <div class="lesson-content">
-                <h2>API Security Fundamentals</h2>
-                <p>APIs are the backbone of modern applications, making their security crucial. Secure APIs protect against unauthorized access and data breaches while ensuring reliable service delivery.</p>
+                    <h2>Install Hyper-V and Shared Folders</h2>
 
-                <h2>API Authentication Methods</h2>
-                <ul>
-                    <li><strong>API Keys:</strong> Simple but limited security method</li>
-                    <li><strong>OAuth 2.0:</strong> Industry-standard authorization framework</li>
-                    <li><strong>JWT Tokens:</strong> Stateless authentication tokens</li>
-                    <li><strong>Basic Authentication:</strong> Username/password over HTTPS</li>
-                    <li><strong>Mutual TLS:</strong> Certificate-based authentication</li>
-                </ul>
+                    <ol>
+                    <li>Login to your Virtual Machine.</li>
+                    <li>Right-click the Windows Start button and select <strong>Windows PowerShell (Admin)</strong>.</li>
+                    <li>Select <strong>Yes</strong> on the User Account Control window.<br>
+                        <em>Note: Running PowerShell as an administrator ensures you have the necessary permissions to install features.</em>
+                    </li>
+                    <li>Run the following command:<br>
+                        <code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code>
+                    </li>
+                    <li>Enter <strong>Y</strong> when prompted to restart the computer to complete the installation.</li>
+                    </ol>
 
-                <h2>Common API Vulnerabilities</h2>
-                <ul>
-                    <li>Broken authentication and authorization</li>
-                    <li>Excessive data exposure</li>
-                    <li>Lack of rate limiting</li>
-                    <li>Injection attacks</li>
-                    <li>Improper asset management</li>
-                    <li>Insufficient logging and monitoring</li>
-                </ul>
+                    <h2>Part III. Configure a New Virtual Machine</h2>
 
-                <h2>API Security Best Practices</h2>
-                <ul>
-                    <li><strong>Authentication:</strong> Implement strong authentication mechanisms</li>
-                    <li><strong>Authorization:</strong> Enforce proper access controls</li>
-                    <li><strong>Rate Limiting:</strong> Prevent abuse and DoS attacks</li>
-                    <li><strong>Input Validation:</strong> Sanitize all API inputs</li>
-                    <li><strong>HTTPS Only:</strong> Encrypt all API communications</li>
-                </ul>
+                    <ol>
+                    <li>Open <strong>Hyper-V Manager</strong> by typing <em>Hyper-V Manager</em> in the search field on the taskbar and selecting it.</li>
+                    <li>Select <strong>BSIT2&lt;Section&gt;-&lt;YourLastname&gt;</strong> in the left pane of the Hyper-V Manager window.</li>
+                    <li>In the Actions menu on the right, select <strong>New</strong> and then click <strong>Virtual Machine</strong>.</li>
+                    <li>Click <strong>Next</strong> on the <em>Before You Begin</em> page of the New Virtual Machine Wizard.</li>
+                    <li>On the <em>Specify Name and Location</em> page, enter <strong>KaliVM-&lt;yourlastname&gt;</strong> in the Name field, then click <strong>Next</strong>.</li>
+                    <li>Select <strong>Generation 1</strong> on the <em>Specify Generation</em> page and click <strong>Next</strong>.</li>
+                    <li>On the <em>Assign Memory</em> page, enter <strong>1024</strong> in the Startup Memory field, then click <strong>Next</strong>.<br>
+                        <em>Note: Always allocate resources carefully to avoid over-provisioning.</em>
+                    </li>
+                    <li>Click <strong>Next</strong> on the <em>Configuring Networking</em> page.</li>
+                    <li>On the <em>Connect Virtual Hard Disk</em> page, enter <strong>90</strong> for the Size, then click <strong>Next</strong>.</li>
+                    <li>On the <em>Installation Options</em> page, select <strong>Install an operating system later</strong>.</li>
+                    <li>Click <strong>Finish</strong> to complete the virtual machine setup.</li>
+                    </ol>
 
-                <h2>API Gateway Security</h2>
-                <p>API gateways provide centralized security controls including authentication, authorization, rate limiting, and monitoring for all API traffic.</p>
-
-                <h2>Security Testing</h2>
-                <ul>
-                    <li>Regular penetration testing</li>
-                    <li>Automated security scanning</li>
-                    <li>OWASP API Top 10 compliance</li>
-                    <li>Runtime application self-protection (RASP)</li>
-                </ul>
             </div>
         </div>
     </main>
 
-    <script src="../js/main.js"></script>
 </body>
 </html>
