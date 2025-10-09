@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
     padding: 0 20px;
 }
 
-/* Landing Page Styles - University Theme */
+
 .landing-page {
     background: #a41e22;
     min-height: 100vh;
@@ -50,7 +50,7 @@ body {
 .hero-content {
     max-width: 700px;
     padding: 3rem;
-    /* Remove all card styling */
+
     background: none;
     backdrop-filter: none;
     border: none;
@@ -152,7 +152,7 @@ body {
 .feature {
     text-align: center;
     padding: 2.5rem;
-    /* Remove card styling */
+
     background: none;
     border: none;
     border-radius: 0;
@@ -161,18 +161,18 @@ body {
 }
 
 .feature::before {
-    /* Remove the top border */
+
     display: none;
 }
 
 .feature:hover {
     transform: translateY(-5px);
-    /* Remove box shadow */
+
     box-shadow: none;
 }
 
 .feature-icon {
-    /* Remove emoji icons */
+
     display: none;
 }
 
@@ -190,7 +190,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Navigation Styles - Academic Header */
+
 .nav-container {
     background: #a41e22;
     box-shadow: 0 2px 10px rgba(0,0,0,0.15);
@@ -251,7 +251,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Main Content Styles */
+
 .main-content {
     min-height: calc(100vh - 100px);
     padding: 3rem 0;
@@ -279,7 +279,7 @@ body {
     border-radius: 2px;
 }
 
-/* Lessons Grid - Academic Layout */
+
 .lessons-grid {
     display: block;
     max-width: 900px;
@@ -347,7 +347,7 @@ body {
     margin: 0;
 }
 
-/* Individual Lesson Page */
+
 .lesson-header {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
@@ -458,7 +458,7 @@ body {
     line-height: 1.7;
 }
 
-/* Favorites Page */
+
 .favorites-empty {
     text-align: center;
     padding: 5rem 2rem;
@@ -481,7 +481,7 @@ body {
     line-height: 1.6;
 }
 
-/* Home Page Styles */
+
 .home-hero {
     position: relative;
     color: white;
@@ -516,7 +516,6 @@ body {
 }
 
 .home-hero .hero-content {
-    /* Override the landing page hero-content styles */
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
@@ -599,7 +598,6 @@ body {
 }
 
 .benefit-card {
-    /* Simple boxy card styling */
     background: white;
     padding: 3rem 2rem;
     border-radius: 0;
@@ -611,7 +609,6 @@ body {
 }
 
 .benefit-card::before {
-    /* Remove any colored borders */
     display: none;
 }
 
@@ -621,7 +618,6 @@ body {
 }
 
 .benefit-icon {
-    /* Hide emoji icons */
     display: none;
 }
 
@@ -666,7 +662,6 @@ body {
     line-height: 1.7;
 }
 
-/* About Page */
 .about-content {
     max-width: 850px;
     margin: 0 auto;
@@ -687,7 +682,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* About Page - Enhanced Styles */
+
 .stats-section {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
@@ -1025,7 +1020,7 @@ body {
     z-index: 1;
 }
 
-/* Board of Directors Section */
+
 .board-section {
     margin-bottom: 6rem;
     padding: 4rem 2rem;
@@ -1138,7 +1133,7 @@ body {
     font-style: italic;
 }
 
-/* Enhanced responsive design for board section */
+
 @media (max-width: 968px) {
     .director-card,
     .director-reverse {
@@ -1190,7 +1185,7 @@ body {
     }
 }
 
-/* Enhanced responsive design for about page */
+
 @media (max-width: 768px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1229,20 +1224,20 @@ body {
     }
 }
 
-/* Align lesson section titles with list rows and visually join them */
+
 .lesson-section {
-    padding: 0; /* container provides the outer border/padding */
+    padding: 0; 
 }
 
 .lesson-section-title {
     text-align: left;
     margin: 0;
-    padding: 2.5rem 2.5rem 1rem 2.5rem; /* same left pad as rows */
-    border-bottom: 1px solid #e5e7eb;    /* becomes the first separator */
+    padding: 2.5rem 2.5rem 1rem 2.5rem; 
+    border-bottom: 1px solid #e5e7eb;    
 }
 
 .lesson-section-title::after {
-    display: none; /* remove decorative bar */
+    display: none;
 }
 
 .lessons-list {
@@ -1251,16 +1246,16 @@ body {
 }
 
 .lesson-row {
-    padding: 0.5rem 0.5rem; /* same left pad as title */
-    background: transparent;             /* inherit section’s white */
-    border: 0;                           /* remove side borders to align text */
-    border-bottom: 1px solid #e5e7eb;    /* only separators between rows */
+    padding: 0.5rem 0.5rem;
+    background: transparent;   
+    border: 0;                        
+    border-bottom: 1px solid #e5e7eb;  
 }
 
 .lesson-row:first-child {
-    border-top: 0; /* header’s bottom border is the top separator */
+    border-top: 0; 
 }
 
 .lesson-row:last-child {
-    border-bottom: 0; /* the section’s outer border closes the box */
+    border-bottom: 0; 
 }
