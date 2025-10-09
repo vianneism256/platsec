@@ -20,7 +20,7 @@ body {
 
 /* Landing Page Styles - University Theme */
 .landing-page {
-    background: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 100%);
+    background: #a41e22;
     min-height: 100vh;
     position: relative;
 }
@@ -32,7 +32,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23ffffff" opacity="0.03"/><path d="M0 0h100v100H0z" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></svg>') repeat;
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-container {
@@ -49,11 +49,12 @@ body {
 
 .hero-content {
     max-width: 700px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     padding: 3rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Remove all card styling */
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
 }
 
 .hero-text h1 {
@@ -68,7 +69,7 @@ body {
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
-    color: #e0f2fe;
+    color: #f8d7da;
     font-style: italic;
 }
 
@@ -101,17 +102,17 @@ body {
 }
 
 .btn-primary {
-    background: #dc2626;
+    background: #000000;
     color: white;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
-    border: 2px solid #dc2626;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid #000000;
 }
 
 .btn-primary:hover {
-    background: #b91c1c;
-    border-color: #b91c1c;
+    background: #333333;
+    border-color: #333333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-secondary {
@@ -122,19 +123,19 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #1e3a8a;
+    color: #a41e22;
     transform: translateY(-2px);
 }
 
 .features-section {
     background: white;
     padding: 5rem 0;
-    border-top: 4px solid #dc2626;
+    border-top: 4px solid #000000;
 }
 
 .features-section h3 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     margin-bottom: 3rem;
     color: #1e3a8a;
     font-family: 'Georgia', serif;
@@ -151,44 +152,42 @@ body {
 .feature {
     text-align: center;
     padding: 2.5rem;
-    border-radius: 12px;
-    background: #fafafa;
-    border: 1px solid #e5e7eb;
+    /* Remove card styling */
+    background: none;
+    border: none;
+    border-radius: 0;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .feature::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #dc2626;
-    border-radius: 12px 12px 0 0;
+    /* Remove the top border */
+    display: none;
 }
 
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    /* Remove box shadow */
+    box-shadow: none;
 }
 
 .feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    /* Remove emoji icons */
+    display: none;
 }
 
 .feature h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     color: #1e3a8a;
     font-family: 'Georgia', serif;
+    font-weight: 600;
 }
 
 .feature p {
     color: #6b7280;
     line-height: 1.6;
+    font-size: 1.2rem;
 }
 
 /* Navigation Styles - Academic Header */
@@ -282,66 +281,70 @@ body {
 
 /* Lessons Grid - Academic Layout */
 .lessons-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 1100px;
+    display: block;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .lesson-card {
+    display: block;
     background: white;
-    border-radius: 12px;
+    border-radius: 0;
     padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: none;
     transition: all 0.3s ease;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
     border: 1px solid #e5e7eb;
+    border-bottom: none;
+    margin-bottom: 0;
     position: relative;
     overflow: hidden;
 }
 
+.lesson-card:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
+
 .lesson-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, #1e3a8a, #dc2626);
+    display: none;
 }
 
 .lesson-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    transform: none;
+    box-shadow: none;
+    background: #f8f9fa;
     text-decoration: none;
     color: inherit;
 }
 
 .lesson-icon {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    display: block;
+    display: none;
 }
 
 .lesson-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #1e3a8a;
-    text-align: center;
+    text-align: left;
     font-family: 'Georgia', serif;
     font-weight: 600;
+    line-height: 1.3;
+}
+
+.lesson-card h3:hover {
+    color: #dc2626;
+    text-decoration: underline;
 }
 
 .lesson-card p {
     color: #6b7280;
-    text-align: center;
+    text-align: left;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 /* Individual Lesson Page */
@@ -355,7 +358,7 @@ body {
 
 .lesson-header::before {
     content: '';
-    position: absolute;
+    position: absolute; 
     bottom: 0;
     left: 0;
     right: 0;
@@ -419,12 +422,12 @@ body {
 .lesson-content {
     max-width: 850px;
     margin: 0 auto;
-    padding: 4rem 3rem;
-    background: white;
-    margin-top: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border: 1px solid #e5e7eb;
+    padding: 0rem 3rem;
+    background: none;
+    margin-top: 0rem;
+    border-radius: 0px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.0);
+    border: 0px solid #e5e7eb;
 }
 
 .lesson-content h2 {
@@ -568,8 +571,8 @@ body {
 }
 
 .why-section h2 {
-    font-size: 2.6rem;
-    margin-bottom: 3.5rem;
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
     color: #1e3a8a;
     font-family: 'Georgia', serif;
     font-weight: 600;
@@ -579,10 +582,10 @@ body {
 .why-section h2::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 120px;
     height: 4px;
     background: #dc2626;
     border-radius: 2px;
@@ -591,15 +594,16 @@ body {
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
+    gap: 3rem;
     margin-bottom: 4rem;
 }
 
 .benefit-card {
+    /* Simple boxy card styling */
     background: white;
     padding: 3rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid #e5e7eb;
@@ -607,29 +611,23 @@ body {
 }
 
 .benefit-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: #dc2626;
-    border-radius: 12px 12px 0 0;
+    /* Remove any colored borders */
+    display: none;
 }
 
 .benefit-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
 .benefit-icon {
-    font-size: 3.2rem;
-    margin-bottom: 1.5rem;
+    /* Hide emoji icons */
+    display: none;
 }
 
 .benefit-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     color: #1e3a8a;
     font-family: 'Georgia', serif;
     font-weight: 600;
@@ -638,39 +636,34 @@ body {
 .benefit-card p {
     color: #6b7280;
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .cta-section {
-    background: white;
+    background: none;
     padding: 4rem 3rem;
-    border-radius: 12px;
+    border-radius: 0;
     text-align: center;
     margin-top: 3rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border: 1px solid #e5e7eb;
+    box-shadow: none;
+    border: none;
 }
 
 .cta-section h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
     color: #1e3a8a;
     font-family: 'Georgia', serif;
 }
 
 .cta-section p {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: #6b7280;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
+    margin-bottom: 3rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
-}
-
-.btn-large {
-    padding: 20px 45px;
-    font-size: 1.1rem;
 }
 
 /* About Page */
@@ -692,13 +685,6 @@ body {
     font-weight: 600;
     border-bottom: 2px solid #e5e7eb;
     padding-bottom: 0.5rem;
-}
-
-.about-content p {
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    color: #374151;
-    font-size: 1.05rem;
 }
 
 /* About Page - Enhanced Styles */
@@ -1234,11 +1220,47 @@ body {
     
     .section-title {
         font-size: 2.2rem;
+        font-size: 2.2rem;
     }
 }
-
 @media (max-width: 1024px) and (min-width: 769px) {
     .lessons-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Align lesson section titles with list rows and visually join them */
+.lesson-section {
+    padding: 0; /* container provides the outer border/padding */
+}
+
+.lesson-section-title {
+    text-align: left;
+    margin: 0;
+    padding: 2.5rem 2.5rem 1rem 2.5rem; /* same left pad as rows */
+    border-bottom: 1px solid #e5e7eb;    /* becomes the first separator */
+}
+
+.lesson-section-title::after {
+    display: none; /* remove decorative bar */
+}
+
+.lessons-list {
+    padding: 0;
+    margin: 0;
+}
+
+.lesson-row {
+    padding: 0.5rem 0.5rem; /* same left pad as title */
+    background: transparent;             /* inherit section’s white */
+    border: 0;                           /* remove side borders to align text */
+    border-bottom: 1px solid #e5e7eb;    /* only separators between rows */
+}
+
+.lesson-row:first-child {
+    border-top: 0; /* header’s bottom border is the top separator */
+}
+
+.lesson-row:last-child {
+    border-bottom: 0; /* the section’s outer border closes the box */
 }
